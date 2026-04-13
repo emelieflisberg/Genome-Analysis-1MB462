@@ -9,8 +9,8 @@
 #SBATCH -o /home/emeliefl/Genome-Analysis-1MB462-/Output_slurm/%x.%j.out
 #SBATCH -e /home/emeliefl/Genome-Analysis-1MB462-/Output_slurm/%x.%j.err
 
-
 # Load modules
 module load FastQC/0.12.1-Java-17
 
+# Commands
 fastqc -o /home/emeliefl/Genome-Analysis-1MB462-/Data/FastQC/Illumina -t 2 /crex/proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/genomics_chr3_data/chr3_illumina_R1.fastq.gz  /crex/proj/uppmax2026-1-61/Genome_Analysis/2_Zhou_2023/reads/genomics_chr3_data/chr3_illumina_R2.fastq.gz
