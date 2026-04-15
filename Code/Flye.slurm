@@ -2,7 +2,7 @@
 #SBATCH -A uppmax2026-1-61
 #SBATCH -p pelle
 #SBATCH -c 2
-#SBATCH --mem=32GB
+#SBATCH --mem=64GB
 #SBATCH -t 60:00:00
 #SBATCH -J Flye_Nanopore
 #SBATCH --mail-type=ALL
