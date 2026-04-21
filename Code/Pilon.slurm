@@ -2,8 +2,9 @@
 #SBATCH -A uppmax2026-1-61
 #SBATCH -p pelle
 #SBATCH -c 2
-#SBATCH -t 00:35:00
+#SBATCH -t 35:00:00
 #SBATCH -J Pilon
+#SBATCH --mem=20G
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user emelie.flisberg.4062@student.uu.se
 #SBATCH --output=/home/emeliefl/Genome-Analysis-1MB462-/Output_slurm/%x.%j.out
@@ -12,8 +13,12 @@
 # Load modules
 module load Pilon/1.24-Java-17
 
+
+
+
 ref=/home/emeliefl/Genome-Analysis-1MB462-/Data/Flye/assembly.fasta
 bam=/home/emeliefl/Genome-Analysis-1MB462-/Data/BWA/aln-pe.bam
 outdir=/home/emeliefl/Genome-Analysis-1MB462-/Data/Pilon
 # Commands
-pilon --threads 2 --genome $ref --bam $bam --outdir $outdir
+java -Xmx18G -jar $EBROOTPILON/pilon.jar \
+--threads 2 --genome $ref --bam $bam --outdir $outdir 
